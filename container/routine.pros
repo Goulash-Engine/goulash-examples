@@ -1,0 +1,6 @@
+logic routine {
+    actors::state(nourishment).minus(0.05);
+    actors[state.nourishment < 70]::urges(eat).plus(0.1);
+    actors[state.nourishment < 30]::urges(eat).plus(0.5);
+    actors[state.nourishment < 10]::urges(eat).plus(1.0);
+}
