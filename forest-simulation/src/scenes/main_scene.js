@@ -1,20 +1,21 @@
 import Phaser from "phaser";
-import logoImg from "../assets/logo.png";
+import map from "../map/forest.json";
+import grass from "../map/grass.png";
 
-export default class MyGame extends Phaser.Scene
-{
-  constructor ()
-  {
+export default class MyGame extends Phaser.Scene {
+  constructor() {
     super();
   }
 
-  preload ()
-  {
-    this.load.image('logo', logoImg);
+  preload() {
+    this.load.tilemapTiledJSON('map', map)
+    this.load.image('tiles', grass);
   }
 
-  create ()
-  {
-    const logo = this.add.image(400, 150, 'logo');
+  create() {
+    const map = this.make.tilemap({key: 'map'});
+    const grassTiles = map.addTilesetImage('grass', 'tiles');
+    const layer = map.createLayer('base', grassTiles);
   }
+
 }

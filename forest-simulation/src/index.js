@@ -3,9 +3,9 @@ import MyGame from './scenes/main_scene';
 
 const config = {
     type: Phaser.AUTO,
-    parent: 'phaser-example',
-    width: 800,
-    height: 600,
+    parent: 'goulash-phaser-3',
+    width: 10*32,
+    height: 10*32,
     scene: MyGame
 };
 
