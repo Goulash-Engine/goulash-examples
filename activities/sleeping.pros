@@ -1,8 +1,0 @@
-activity sleeping {
-	trigger_urges ["sleep"]
-	duration ["60"]
-	priority ["1"]
-	logic act {
-		actor::urge(sleep).minus(60);
-	}
-}
